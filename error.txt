@@ -1,0 +1,31 @@
+>>>> Start compiling
+Rebuilding since [ [ 'rename', '.#DataFetcher.re' ] ]
+ninja: Entering directory `lib/bs'
+[3/3] Building src/DataFetcher.mlast.d
+[2/2] Building src/Index-TicTacToe.cmj
+FAILED: src/Index-TicTacToe.cmj /home/jfgorski/dev/misc/reasonml/tic-tac-toe/src/Index.bs.js src/Index-TicTacToe.cmi
+/home/jfgorski/dev/misc/reasonml/tic-tac-toe/node_modules/bs-platform/lib/bsc.exe -bs-package-map tic-tac-toe  -bs-package-output commonjs:src -bs-assume-no-mli -bs-no-builtin-ppx-ml -bs-no-implicit-include -I /home/jfgorski/dev/misc/reasonml/tic-tac-toe/node_modules/reason-react/lib/ocaml -I /home/jfgorski/dev/misc/reasonml/tic-tac-toe/node_modules/bs-socket/lib/ocaml -I . -I src  -w -30-40+6+7+27+32..39+44+45+101 -warn-error +5 -bs-suffix -nostdlib -I '/home/jfgorski/dev/misc/reasonml/tic-tac-toe/node_modules/bs-platform/lib/ocaml' -no-alias-deps -color always -bs-re-out -bs-super-errors -o src/Index-TicTacToe.cmj -c  src/Index.mlast
+
+  We've found a bug for you!
+  /home/jfgorski/dev/misc/reasonml/tic-tac-toe/src/Index.re 1:34-48
+
+  1 │ ReactDOMRe.renderToElementWithId(<DataFetcher />, "index");
+
+  This has type:
+    ReasonReact.componentSpec(TicTacToe.DataFetcher.state,
+                               ReasonReact.stateless,
+                               ReasonReact.noRetainedProps,
+                               ReasonReact.noRetainedProps,
+                               TicTacToe.DataFetcher.action)
+  But somewhere wanted:
+    ReasonReact.component(TicTacToe.DataFetcher.state, 'a, 'b) (defined as
+      ReasonReact.componentSpec(TicTacToe.DataFetcher.state,
+                                 TicTacToe.DataFetcher.state, 'a, 'a, 'b))
+
+  The incompatible parts:
+    ReasonReact.stateless (defined as unit)
+    vs
+    TicTacToe.DataFetcher.state (defined as TicTacToe.DataFetcher.state)
+
+ninja: build stopped: subcommand failed.
+>>>> Finish compiling(exit: 1)
